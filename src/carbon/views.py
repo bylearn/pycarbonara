@@ -4,5 +4,5 @@ from rest_framework.response import Response
 
 # Create your views here.
 class CarbonView(APIView):
-    def get(self, request):
+    def post(self, request):
         return Response({"status": "OK"})
