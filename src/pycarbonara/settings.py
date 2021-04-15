@@ -32,7 +32,9 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "carbon",
+]
 
 EXTERNAL_APPS = [
     "rest_framework",
