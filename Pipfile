@@ -18,6 +18,7 @@ djangorestframework = "*"
 markdown = "*"
 djangorestframework-jwt = "*"
 django-extensions = "*"
+psycopg2 = "*"
 
 [requires]
 
