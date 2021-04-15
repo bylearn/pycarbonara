@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+black = "*"
+pytest = "*"
+pytest-django = "*"
+requests2 = "*"
+rope = "*"
+ipython = "*"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+markdown = "*"
+djangorestframework-jwt = "*"
+django-extensions = "*"
+
+[requires]
+
+[pipenv]
+allow_prereleases = true
