@@ -13,7 +13,6 @@ async def get_content(url):
     )
     page = await browser.newPage()
     await page.goto(url)
-    await page.screenshot({"path": "example.png"})
     await page.setViewport(
         {
             "width": 8192,
