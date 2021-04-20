@@ -1,7 +1,8 @@
 FROM python:3.9-alpine
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update && apk add --no-cache postgresql-dev gcc python3-dev musl-dev bash tzdata openssl; \
+RUN apk update && apk add --no-cache postgresql-dev gcc python3-dev musl-dev bash tzdata openssl \
+    chromium udev ttf-freefont; \
     cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime; \
     echo "America/Sao_Paulo" > /etc/timezone
 

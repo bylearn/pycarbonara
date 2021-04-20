@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 
-class OptionsSerializer(serializers.Serializer):
+class BaseOptionsSerializer(serializers.Serializer):
     code = serializers.CharField(required=True)  # Code
     bg = serializers.CharField(default="rgba(171, 184, 195, 1)")  # Background
     ds = serializers.BooleanField(default=True)  # dropShadow
@@ -23,6 +23,8 @@ class OptionsSerializer(serializers.Serializer):
     wc = serializers.BooleanField(default=True)  # windowControls
     wt = serializers.CharField(default="none")  # windowTheme
 
+
+class OptionsSerializer(BaseOptionsSerializer):
     def to_representation(self, instance):
         dict_values = super().to_representation(instance)
         for key, value in dict_values.items():
