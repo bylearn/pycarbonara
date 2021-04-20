@@ -1,4 +1,7 @@
 import asyncio
+import base64
+import sys
+
 from pyppeteer import launch
 
 
@@ -31,13 +34,13 @@ async def get_content(url):
 
     element = await page.querySelector("#export-container  .container-bg")
 
-    image = await element.screenshot(
-        {
-            "omitBackground": True,
-            "path": "carbon.png",
-        }
-    )
+    image = await element.screenshot({"omitBackground": True})
 
     await browser.close()
 
-    return image
+    print(base64.b64encode(image))
+
+
+url = sys.argv[1]
+
+asyncio.get_event_loop().run_until_complete(get_content(url))
