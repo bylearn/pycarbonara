@@ -22,3 +22,10 @@ class OptionsSerializer(serializers.Serializer):
     wa = serializers.BooleanField(default=True)  # widthAdjustment
     wc = serializers.BooleanField(default=True)  # windowControls
     wt = serializers.CharField(default="none")  # windowTheme
+
+    def to_representation(self, instance):
+        dict_values = super().to_representation(instance)
+        for key, value in dict_values.items():
+            if isinstance(value, bool):
+                dict_values[key] = str(value).lower()
+        return dict_values
