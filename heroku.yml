@@ -17,4 +17,4 @@ release:
     - python src/manage.py migrate
   image: web
 run:
-  web: dockerize -wait tcp://db:5432 -wait-retry-interval 10s entry-application
+  web: entry-application
