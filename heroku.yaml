@@ -1,0 +1,15 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: db
+build:
+  docker:
+    web: Dockerfile
+  config:
+    ENVIRONMENT: production
+release:
+  command:
+    - python src/manage.py migrate
+  image: web
+run:
+  web: dockerize -wait tcp://db:5432 -wait-retry-interval 10s entry-application
