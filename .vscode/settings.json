@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "C:\\Users\\felip\\.virtualenvs\\pycarbonara-pWE4X7V1\\Scripts\\python.exe",
+  "python.pythonPath": "/home/haynes/.local/share/virtualenvs/pycarbonara-Ft0D28IZ/bin/python",
   "python.formatting.provider": "black",
   "files.eol": "\n"
 }

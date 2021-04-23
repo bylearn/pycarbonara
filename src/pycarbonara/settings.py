@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 LOCAL_APPS = [
+    "core",
     "carbon",
 ]
 
