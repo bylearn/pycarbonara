@@ -88,7 +88,16 @@ WSGI_APPLICATION = "pycarbonara.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "HOST": "db",
+        "PASSWORD": "pycarbonara",
+        "PORT": 5432,
+    }
+}
 
 
 # Password validation
