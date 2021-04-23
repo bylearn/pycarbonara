@@ -17,4 +17,4 @@ run:
     DATABASE_USER: pkjwjwasnvmsmg
     DATABASE_PASSWORD: 6904b32ffcbd6fdd3e3052363dc811c3e1a3567dfc8553f3c0a1f1856ad1591e
     DATABASE_HOST: ec2-54-224-120-186.compute-1.amazonaws.com
-    DATABASE_PORT: 5432:
+    DATABASE_PORT: 5432
