@@ -19,7 +19,7 @@ djangorestframework-jwt = "*"
 django-extensions = "*"
 psycopg2 = "*"
 pyppeteer = "*"
-
+pillow = "*"
 
 [requires]
 
