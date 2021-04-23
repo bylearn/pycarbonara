@@ -23,8 +23,6 @@ class CarbonView(APIView):
     def post(self, request):
         options = OptionsSerializer(data=request.data)
 
-        renderer_classes = [JPEGRenderer, PNGRenderer]
-
         if options.is_valid():
             urlencoded = "https://carbon.now.sh/?" + urlencode(options.data)
             print(urlencoded)
@@ -39,11 +37,8 @@ class CarbonView(APIView):
             stdout, stderr = process.communicate()
 
             exit_code = process.wait()
-
             image = stdout.replace("\n", "").replace("b'", "")[:-1]
-
             image = image.encode()
-
             image = base64.b64decode(image)
 
             return HttpResponse(image, content_type="image/png")
