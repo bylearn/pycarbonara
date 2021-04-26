@@ -29,6 +29,8 @@ ENVIRONMENT = os.environ.get("ENVIRONMENT", "development")
 IS_DEVELOPMENT = ENVIRONMENT == "development"
 DEBUG = IS_DEVELOPMENT
 
+port = int(os.environ.get("PORT", 5000))
+
 ALLOWED_HOSTS = ["*"]
 
 

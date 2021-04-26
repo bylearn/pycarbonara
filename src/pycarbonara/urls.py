@@ -19,5 +19,5 @@ from django.urls import path, include, re_path
 urlpatterns = [
     path("", include("core.urls", namespace="core")),
     path("admin/", admin.site.urls),
-    re_path("carbon/?", include("carbon.urls", namespace="carbon")),
+    re_path("api/cook/?", include("carbon.urls", namespace="carbon")),
 ]
