@@ -7,11 +7,11 @@ build:
     web: Dockerfile
   config:
     ENVIRONMENT: production
-    DATABASE_NAME: d5ep74s79hb9mo
-    DATABASE_USER: nehoiweclntcif
-    DATABASE_PASSWORD: 2e6c70a688820af59f13812993927e1136cf648280fb4a0b030cb755fe69560e
-    DATABASE_HOST: ec2-18-214-140-149.compute-1.amazonaws.com
-    DATABASE_PORT: 5432
+    DATABASE_NAME: nome_que_está_no_heroku
+    DATABASE_USER: usuário_que_está_no_heroku
+    DATABASE_PASSWORD: senha_que_está_no_heroku
+    DATABASE_HOST: host_que_está_no_heroku
+    DATABASE_PORT: porta_que_está_no_heroku
 release:
   command:
     - python src/manage.py migrate
