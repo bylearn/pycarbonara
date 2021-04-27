@@ -9,5 +9,7 @@ if [[ -z "${ENVIRONMENT}" ]]; then
 elif [[ ${ENVIRONMENT} == "production" ]]; then
     echo "Running web application: production"
     cd src/
+    python src/manage.py migrate
+    python src/manage.py collectstatic --noinput --clear
     gunicorn --bind 0.0.0.0:$PORT pycarbonara.wsgi
 fi
