@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.8-alpine
 ENV PYTHONUNBUFFERED 1
 
 RUN apk update && apk add --no-cache postgresql-dev \
@@ -17,6 +17,10 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 RUN mkdir /code
 
 WORKDIR /code
+
+RUN apk --update --no-cache add python3-dev libffi-dev gcc \
+    musl-dev make libevent-dev build-base
+RUN pip install gevent
 
 COPY . /code
 
