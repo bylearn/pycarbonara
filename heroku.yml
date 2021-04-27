@@ -14,7 +14,9 @@ build:
     DATABASE_PORT: porta_que_está_no_heroku
 release:
   command:
+    - pyppeteer-install
     - python src/manage.py migrate
+    - python src/manage.py collectstatic
   image: web
 run:
   web: entry-application
