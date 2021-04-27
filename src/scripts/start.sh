@@ -8,6 +8,6 @@ if [[ -z "${ENVIRONMENT}" ]]; then
     python src/manage.py runserver 0.0.0.0:8000
 elif [[ ${ENVIRONMENT} == "production" ]]; then
     echo "Running web application: production"
-    python src/manage.py migrate
-    python src/manage.py runserver 0.0.0.0:$PORT
+    cd src/
+    gunicorn --bind 0.0.0.0:$PORT pycarbonara.wsgi
 fi

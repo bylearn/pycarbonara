@@ -22,6 +22,7 @@ psycopg2 = "*"
 pyppeteer = "*"
 pillow = "*"
 dj-database-url = "*"
+gunicorn = "*"
 
 [requires]
 
