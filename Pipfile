@@ -23,6 +23,7 @@ pyppeteer = "*"
 pillow = "*"
 dj-database-url = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 
