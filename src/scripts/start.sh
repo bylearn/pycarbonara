@@ -12,5 +12,5 @@ elif [[ ${ENVIRONMENT} == "production" ]]; then
     pyppeteer-install
     python manage.py migrate
     python manage.py collectstatic --noinput --clear
-    gunicorn pycarbonara.wsgi --bind 0.0.0.0:$PORT --timeout 120 --worker-class=gevent --worker-connections=1000 --workers=3
+    gunicorn pycarbonara.wsgi --bind 0.0.0.0:$PORT --timeout 120 --workers=3
 fi
