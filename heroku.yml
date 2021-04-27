@@ -16,7 +16,7 @@ release:
   command:
     - pyppeteer-install
     - python src/manage.py migrate
-    - python src/manage.py collectstatic
+    - python src/manage.py collectstatic --noinput --clear
   image: web
 run:
   web: entry-application
