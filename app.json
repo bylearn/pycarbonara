@@ -1,0 +1,32 @@
+{
+  "name": "PyCarbonara",
+  "description": "Carbonara (Carbon API) implementation with Python.",
+  "keywords": [
+    "carbon",
+    "api",
+    "python"
+  ],
+  "success_url": "/api/cook",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "env": {
+    "ENVIRONMENT": {
+      "description": "Debug or Production.",
+      "value": "production"
+    }
+  },
+  "stack": "container"
+  
+}
