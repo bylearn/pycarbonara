@@ -24,6 +24,7 @@ pillow = "*"
 dj-database-url = "*"
 gunicorn = "*"
 whitenoise = "*"
+gevent = "*"
 
 [requires]
 
