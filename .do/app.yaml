@@ -1,15 +1,24 @@
 name: pycarbonara
+region: nyc
 services:
   - dockerfile_path: Dockerfile
     github:
       branch: master
       deploy_on_push: true
       repo: bylearn/pycarbonara
+    http_port: 8000
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    name: pycarbonara
+    run_command: entry-application
+    routes:
+      - path: /
     envs:
       - key: ENVIRONMENT
-        scope: RUN_TIME
         value: production
-      - key: PORT
         scope: RUN_TIME
-        value: 80
-    name: pycarbonara
+        type: GENERAL
+      - key: PORT
+        value: 8000
+        scope: RUN_TIME
+        type: GENERAL
