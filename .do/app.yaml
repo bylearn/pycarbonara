@@ -1,15 +1,15 @@
 name: pycarbonara
 services:
-- dockerfile_path: Dockerfile
-  github:
-    branch: master
-    deploy_on_push: true
-    repo: bylearn/pycarbonara
-  envs:
-  - key: ENVIRONMENT
-    value: production
-    scope: RUN_TIME
-  - key: PORT
-    value: 80
-    scope: RUN_TIME
-  name: pycarbonara
+  - dockerfile_path: Dockerfile
+    github:
+      branch: master
+      deploy_on_push: true
+      repo: bylearn/pycarbonara
+    envs:
+      - key: ENVIRONMENT
+        scope: RUN_TIME
+        value: production
+      - key: PORT
+        scope: RUN_TIME
+        value: 80
+    name: pycarbonara
