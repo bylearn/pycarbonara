@@ -1,10 +1,12 @@
 import asyncio
 import base64
 import json
+import os
 import subprocess
 from urllib.parse import urlencode
 from wsgiref.util import FileWrapper
 
+from django.conf import settings
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from rest_framework import status
@@ -23,10 +25,13 @@ class CarbonView(APIView):
 
         if options.is_valid():
             urlencoded = "https://carbon.now.sh/?" + urlencode(options.data)
-            print(urlencoded)
 
+            jobs = os.path.join(
+                settings.BASE_DIR,
+                "carbon/jobs.py",
+            )
             process = subprocess.Popen(
-                ["python", "src/carbon/jobs.py", urlencoded],
+                ["python", jobs, urlencoded],
                 stderr=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 encoding="utf-8",
