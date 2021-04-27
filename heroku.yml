@@ -7,11 +7,6 @@ build:
     web: Dockerfile
   config:
     ENVIRONMENT: production
-    DATABASE_NAME: nome_que_está_no_heroku
-    DATABASE_USER: usuário_que_está_no_heroku
-    DATABASE_PASSWORD: senha_que_está_no_heroku
-    DATABASE_HOST: host_que_está_no_heroku
-    DATABASE_PORT: porta_que_está_no_heroku
 release:
   command:
     - pyppeteer-install
