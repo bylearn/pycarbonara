@@ -9,6 +9,7 @@ if [[ -z "${ENVIRONMENT}" ]]; then
 elif [[ ${ENVIRONMENT} == "production" ]]; then
     echo "Running web application: production"
     cd src/
+    pyppeteer-install
     python manage.py migrate
     python manage.py collectstatic --noinput --clear
     gunicorn --bind 0.0.0.0:$PORT pycarbonara.wsgi
