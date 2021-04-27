@@ -1,20 +1,18 @@
-import json
 import asyncio
 import base64
+import json
 import subprocess
-from django.http.response import HttpResponse
-
-from django.shortcuts import render
-from rest_framework import status
-from rest_framework.views import APIView
-from rest_framework.response import Response
 from urllib.parse import urlencode
 from wsgiref.util import FileWrapper
 
+from django.http.response import HttpResponse
+from django.shortcuts import render
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from .serializers import OptionsSerializer
 from .custom_renderers import JPEGRenderer, PNGRenderer
-
+from .serializers import OptionsSerializer
 
 # Create your views here.
 
