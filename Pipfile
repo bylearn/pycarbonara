@@ -10,6 +10,7 @@ pytest = "*"
 pytest-django = "*"
 rope = "*"
 ipython = "*"
+isort = "*"
 
 [packages]
 django = "*"
