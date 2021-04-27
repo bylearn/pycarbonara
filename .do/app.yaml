@@ -5,4 +5,11 @@ services:
     branch: master
     deploy_on_push: true
     repo: bylearn/pycarbonara
+  envs:
+  - key: ENVIRONMENT
+    value: production
+    scope: RUN_TIME
+  - key: PORT
+    value: 80
+    scope: RUN_TIME
   name: pycarbonara
