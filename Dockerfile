@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update && apk add --no-cache postgresql-dev \
     gcc python3-dev musl-dev bash tzdata openssl \
     chromium udev ttf-freefont zlib-dev jpeg-dev gcc musl-dev freetype-dev fribidi-dev \
-    harfbuzz-dev lcms2-dev openjpeg-dev tcl-dev tiff-dev tk-dev; \
+    harfbuzz-dev lcms2-dev openjpeg-dev tcl-dev tiff-dev tk-dev libffi-dev make libevent-dev build-base; \
     cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime; \
     echo "America/Sao_Paulo" > /etc/timezone
 
@@ -18,15 +18,7 @@ RUN mkdir /code
 
 WORKDIR /code
 
-RUN apk --update --no-cache add python3-dev libffi-dev gcc \
-    musl-dev make libevent-dev build-base
-RUN pip install gevent
-
 COPY . /code
-
-RUN pip install pipenv; \
-    pipenv lock --requirements > requirements.txt; \
-    pipenv lock --requirements --dev-only > requirements-dev.txt
 
 RUN pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
 
