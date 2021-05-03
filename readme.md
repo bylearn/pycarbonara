@@ -1,5 +1,6 @@
 # PyCarbonara
 
+Este projeto é uma versão do [Carbonara](https://github.com/petersolopov/carbonara), que funciona como uma API para o site http://carbon.now.sh/, porém, feito em Python com o Django.
 
 ## Implantando o aplicativo
 
